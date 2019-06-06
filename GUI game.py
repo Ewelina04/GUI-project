@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 
-
 def tele():
     messagebox.showinfo("Dzwonimy do Twojego przyjaciela", "H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź'...\ni jestem tego pewny na... Mogę się jednak mylić...\n")
 def pol_na_pol():
@@ -17,6 +16,18 @@ def akcja_przycisk ():
 
 
 glowne_okno=Tk()
+
+canvas_width = 300
+canvas_height =300
+plotno = Canvas(glowne_okno,
+           width=canvas_width,
+           height=canvas_height)
+plotno.pack()
+img = Image.open("h.jpg")
+img = img.resize((300,305))
+imgTk = ImageTk.PhotoImage(img)
+plotno.create_image(200,200,image=imgTk)
+
 pasekMenu = Menu(glowne_okno)
 peirwszeMenu = Menu(pasekMenu, tearoff=0)
 peirwszeMenu.add_command(label="Telefon do przyjaciela", command=tele)
@@ -30,19 +41,34 @@ pomocMenu.add_command(label="info o prowadzącym", command=akcjaAutor)
 pasekMenu.add_cascade(label="Prowadzący", menu=pomocMenu)
 glowne_okno.config(menu=pasekMenu)
 
-
-
 glowne_okno.title("OKNO GRY")
-glowne_okno.geometry("700x450")
-przycisk1 = Button(glowne_okno, text="Powitanie", command=akcja_przycisk)
-przycisk1.grid()
-odp_a= Button(glowne_okno, text="A", fg = "red")
-odp_a.place(x=30, y=80)
-odp_b= Button(glowne_okno, text="B", fg = "blue")
-odp_b.place(x=80, y=80)
-odp_c= Button(glowne_okno, text="C", fg = "green")
-odp_c.place(x=30, y=150)
-odp_d= Button(glowne_okno, text="D", fg = "purple")
-odp_d.place(x=80, y=150)
+glowne_okno.geometry("700x550")
+v = IntVar()
+v.set(0)  
+languages = [
+    ("A"),
+    ("B"),
+    ("C"),
+    ("D")
+]
+def ShowChoice():
+    print(v.get())
+Label(glowne_okno,
+         text="""Poprawna odpowiedź na to pytanie to... :""",
+         font=("Times New Roman",11,"italic"),
+         padx = 20).pack()
+for val, language in enumerate(languages):
+    Radiobutton(glowne_okno,
+                  text=language,
+                  indicatoron = 0,
+                  width = 20,
+                  padx = 20,
+                  variable=v,
+                  command=ShowChoice,
+                  font=("Curier",10,"bold"),
+                  bg = "white",
+                  activebackground = "light blue",
+                  value=val).pack(anchor=S)
+
 
 glowne_okno.mainloop()
