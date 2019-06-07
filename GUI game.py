@@ -4,6 +4,7 @@ from PIL import Image, ImageTk
 from pygame import mixer
 import random
 import time
+import tkinter as tk
 
 # 3 koła ratunkowe w pasku menu, po ich kliknięciu wyświetla się info że one coś tam robią
 def tele():
@@ -43,11 +44,14 @@ imgTk = ImageTk.PhotoImage(img)
 plotno.create_image(200,200,image=imgTk)
 
 #przyciski kół
-przycisk_50na50=Button(glowne_okno,text="50:50",command=pol_na_pol)
+img50na50 = tk.PhotoImage(file="50-50.jpg")
+przycisk_50na50 = tk.Button(glowne_okno, image=img50na50 ,command=pol_na_pol)
 przycisk_50na50.pack()
-przycisk_publicznosc=Button(glowne_okno,text="Publicznosc",command=publicznosc)
+imgPublicznosc = tk.PhotoImage(file="publicznosc.jpg")
+przycisk_publicznosc=Button(glowne_okno, image=imgPublicznosc ,command=publicznosc)
 przycisk_publicznosc.pack()
-przycisk_telefon=Button(glowne_okno,text="Telefon",command=tele)
+imgTelefon = tk.PhotoImage(file="telefon.jpg")
+przycisk_telefon=Button(glowne_okno, image=imgTelefon ,command=tele)
 przycisk_telefon.pack()
 
 pasekMenu = Menu(glowne_okno)
