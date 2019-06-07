@@ -44,10 +44,12 @@ plotno.create_image(200,200,image=imgTk)
 
 pasekMenu = Menu(glowne_okno)
 peirwszeMenu = Menu(pasekMenu, tearoff=0)
+
 # nazwy okienek u góry(tytuły) po wcisnieciu poszczególnych kół z menu
 peirwszeMenu.add_command(label="Telefon do przyjaciela", command=tele)
 peirwszeMenu.add_command(label="pół na pół", command=pol_na_pol)
 peirwszeMenu.add_command(label="publicznosc", command=publicznosc)
+
 # dalsze menu po lewej u góry co się wyświetla
 peirwszeMenu.add_command(label="wyjdz", command=glowne_okno.quit)
 pasekMenu.add_cascade(label="koła ratunkowe", menu=peirwszeMenu)
