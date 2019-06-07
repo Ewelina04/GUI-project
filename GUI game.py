@@ -69,6 +69,11 @@ glowne_okno.config(menu=pasekMenu)
 glowne_okno.title("OKNO GRY")
 glowne_okno.geometry("700x550")
 
+zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sagi Andrzeja Sapkowskiego pochodzi z...','A. Vengerbergu','B. Rivii','C. Oxenfurtu','D. Tretogoru','B'],
+['Jaką cześć liter w wyrazie "bajzel" stanowią samogłoski?','A. jedną trzecią',' B. jedną piątą','C. jedną czwartą','D. jedną drugą','A'],
+['Na akord można:','A. spać','B. śpiewać','C. podróżować','D. pracować','D'],
+['Gromada gadów to inaczej: ', 'A. Arachnida', 'B. Reptilia', 'C. Amphibia', 'D. Insecta', 'B']]
+
 class Pytanie:
     def losuj(self):
         wylosowane_pytanie=random.choice(zestaw_pytan_1)
