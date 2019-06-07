@@ -17,14 +17,14 @@ def akcja_przycisk ():
 
 glowne_okno=Tk()
 
-canvas_width = 300
+canvas_width = 330
 canvas_height =300
 plotno = Canvas(glowne_okno,
            width=canvas_width,
            height=canvas_height)
-plotno.pack()
+plotno.pack(side=TOP)
 img = Image.open("h.jpg")
-img = img.resize((300,305))
+img = img.resize((320,320))
 imgTk = ImageTk.PhotoImage(img)
 plotno.create_image(200,200,image=imgTk)
 
@@ -56,7 +56,7 @@ def ShowChoice():
 Label(glowne_okno,
          text="""Poprawna odpowiedź na to pytanie to... :""",
          font=("Times New Roman",11,"italic"),
-         padx = 20).pack()
+         padx = 20).pack(side=TOP)
 for val, language in enumerate(languages):
     Radiobutton(glowne_okno,
                   text=language,
@@ -66,8 +66,8 @@ for val, language in enumerate(languages):
                   variable=v,
                   command=ShowChoice,
                   font=("Curier",10,"bold"),
-                  bg = "white",
-                  activebackground = "light blue",
+                  bg = "light blue",
+                  activebackground = "dark red",
                   value=val).pack(anchor=S)
 
 
