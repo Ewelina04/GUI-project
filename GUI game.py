@@ -42,6 +42,14 @@ img = img.resize((320,320))
 imgTk = ImageTk.PhotoImage(img)
 plotno.create_image(200,200,image=imgTk)
 
+#przyciski kół
+przycisk_50na50=Button(glowne_okno,text="50:50",command=pol_na_pol)
+przycisk_50na50.pack()
+przycisk_publicznosc=Button(glowne_okno,text="Publicznosc",command=publicznosc)
+przycisk_publicznosc.pack()
+przycisk_telefon=Button(glowne_okno,text="Telefon",command=tele)
+przycisk_telefon.pack()
+
 pasekMenu = Menu(glowne_okno)
 peirwszeMenu = Menu(pasekMenu, tearoff=0)
 
@@ -61,15 +69,29 @@ glowne_okno.config(menu=pasekMenu)
 glowne_okno.title("OKNO GRY")
 glowne_okno.geometry("700x550")
 
+class Pytanie:
+    def losuj(self):
+        wylosowane_pytanie=random.choice(zestaw_pytan_1)
+        zestaw_pytan_1.remove(wylosowane_pytanie)
+        return wylosowane_pytanie
+
+pytanie=Pytanie()
+wylosowane = pytanie.losuj()
+a=wylosowane[1]
+b=wylosowane[2]
+c=wylosowane[3]
+d=wylosowane[4]
+Label(glowne_okno,text=wylosowane[0],font=("Times New Roman",11,"italic"), padx = 20).pack(side=TOP)
+
 # to te przyciski odpowiedzi A B C D i ten tekst nad nimi, 
 # ladne kolorki, nie? mogą zostać
 v = IntVar()
 v.set(0)  # to zazanaczona wartosc początkowa czyli 0 = odpowiedzi A
 languages = [
-    ("A"),
-    ("B"),
-    ("C"),
-    ("D")
+    (a),
+    (b),
+    (c),
+    (d)
 ]
 def ShowChoice():
     print(v.get())
