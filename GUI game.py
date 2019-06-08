@@ -23,6 +23,7 @@ def akcja_przycisk ():
 
 
 glowne_okno=Tk()
+glowne_okno.state('zoomed') # od razu pojawia się okno gry full screen, wtedy wszystko widać, nic nie jest ucięte (raczej tak jest lepiej)
 
 # dźwięk
 file = 'milionmusic.mp3'
