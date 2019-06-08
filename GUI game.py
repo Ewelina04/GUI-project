@@ -71,7 +71,7 @@ pasekMenu.add_cascade(label="Prowadzący", menu=pomocMenu)
 glowne_okno.config(menu=pasekMenu)
 
 glowne_okno.title("OKNO GRY")
-glowne_okno.geometry("700x550")
+glowne_okno.geometry("800x900")
 glowne_okno.configure(bg='dark blue') #granatowy kolor tła gry
 
 
