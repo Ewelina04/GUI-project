@@ -92,7 +92,7 @@ a=wylosowane[1]
 b=wylosowane[2]
 c=wylosowane[3]
 d=wylosowane[4]
-Label(glowne_okno,text=wylosowane[0], bg = 'dark blue', fg = 'white', font=("Arial",11,"italic"), padx = 20).pack(side=TOP) #granatowe tło przycisków lepiej to wygląga jako calość gry
+Label(glowne_okno,text=wylosowane[0], bg = 'dark blue', fg = 'white', font=("Arial",16,"italic"), padx = 20).pack(side=TOP) #granatowe tło przycisków lepiej to wygląga jako calość gry
 
 # to te przyciski odpowiedzi A B C D i ten tekst nad nimi, 
 # ladne kolorki, nie? mogą zostać
@@ -110,7 +110,7 @@ Label(glowne_okno,
          text="""Poprawna odpowiedź na to pytanie to... :""",
          bg = 'dark blue',
          fg = 'white',
-         font=("Arial",11,"italic"),
+         font=("Arial",16,"italic"),
          padx = 20).pack(side=TOP)
 # wygląd przycisków A B C D i ich umiejscowienie
 for val, language in enumerate(languages):
@@ -121,7 +121,7 @@ for val, language in enumerate(languages):
                   padx = 20,
                   variable=v,
                   command=ShowChoice,
-                  font=("Curier",10,"bold"),
+                  font=("Curier",12,"bold"),
                   bg = "light blue",
                   activebackground = "dark red",
                   value=val).pack(anchor=S)
