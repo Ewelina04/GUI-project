@@ -14,6 +14,15 @@ def pol_na_pol():
 def publicznosc():
     messagebox.showinfo("pomoc publicznosci", "Proszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:")
 
+# teraz info co te kola robią bedzie się pojawiało w menu a te przyciski tak jak wcześniej, zostają bez zmian    
+def info_tele():
+    messagebox.showinfo("telefon do Twojego przyjaciela", "Wybierając to koło dzwonimy do Twojego przyjaciela, który pomaga Ci poprawnie odpowiedzieć i wygrać milion!!")
+def info_pol_na_pol():
+    messagebox.showinfo("50/50", "Wybierając to koło odrzucamy 2 błęde odpowiedzi.\nZwiększa to twoją szansę z 25% na 50% że wybierzesz poprawną odpowiedź i wygrasz milion!!")
+def info_publicznosc():
+    messagebox.showinfo("pomoc publicznosci", "Wybierając to koło proszę publiczność o zagłosowanie na poprawną ich zdaniem odpowiedź.\nPrzedstawiane są wyniki procentowe kolejno dla odp:\nA, B, C i D\nPubliczność może pomóc Ci poprawnie odpowiedzieć i wygrać milion!!")
+
+    
 # prowadzący po kliknięciu wyżwietla info o hubercie, takie jego cv i autopromocja ;-)
 def akcjaAutor():
     messagebox.showinfo("Hubert", "jestem hubert urbański i prowadzę grę milionerzy w tvn\nod pon. do pt. o 20.55\nZapraszam!")
@@ -59,9 +68,9 @@ pasekMenu = Menu(glowne_okno)
 peirwszeMenu = Menu(pasekMenu, tearoff=0)
 
 # nazwy okienek u góry(tytuły) po wcisnieciu poszczególnych kół z menu
-peirwszeMenu.add_command(label="Telefon do przyjaciela", command=tele)
-peirwszeMenu.add_command(label="pół na pół", command=pol_na_pol)
-peirwszeMenu.add_command(label="publicznosc", command=publicznosc)
+peirwszeMenu.add_command(label="Telefon do przyjaciela", command=info_tele)
+peirwszeMenu.add_command(label="pół na pół", command=info_pol_na_pol)
+peirwszeMenu.add_command(label="publicznosc", command=info_publicznosc)
 
 # dalsze menu po lewej u góry co się wyświetla
 peirwszeMenu.add_command(label="wyjdz", command=glowne_okno.quit)
