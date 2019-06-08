@@ -32,7 +32,7 @@ mixer.music.play()
 
 
 # tworzone zdjęcie huberta
-canvas_width = 330
+canvas_width = 300
 canvas_height =300
 plotno = Canvas(glowne_okno,
            width=canvas_width,
@@ -41,7 +41,7 @@ plotno.pack(side=TOP)
 img = Image.open("h.jpg")
 img = img.resize((320,320))
 imgTk = ImageTk.PhotoImage(img)
-plotno.create_image(200,200,image=imgTk)
+plotno.create_image(145,162,image=imgTk)
 
 #przyciski kół
 img50na50 = tk.PhotoImage(file="50-50.jpg")
@@ -72,6 +72,8 @@ glowne_okno.config(menu=pasekMenu)
 
 glowne_okno.title("OKNO GRY")
 glowne_okno.geometry("700x550")
+glowne_okno.configure(bg='dark blue') #granatowy kolor tła gry
+
 
 zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sagi Andrzeja Sapkowskiego pochodzi z...','A. Vengerbergu','B. Rivii','C. Oxenfurtu','D. Tretogoru','B'],
 ['Jaką cześć liter w wyrazie "bajzel" stanowią samogłoski?','A. jedną trzecią',' B. jedną piątą','C. jedną czwartą','D. jedną drugą','A'],
@@ -90,7 +92,7 @@ a=wylosowane[1]
 b=wylosowane[2]
 c=wylosowane[3]
 d=wylosowane[4]
-Label(glowne_okno,text=wylosowane[0],font=("Times New Roman",11,"italic"), padx = 20).pack(side=TOP)
+Label(glowne_okno,text=wylosowane[0], bg = 'dark blue', fg = 'white', font=("Arial",11,"italic"), padx = 20).pack(side=TOP) #granatowe tło przycisków lepiej to wygląga jako calość gry
 
 # to te przyciski odpowiedzi A B C D i ten tekst nad nimi, 
 # ladne kolorki, nie? mogą zostać
@@ -106,7 +108,9 @@ def ShowChoice():
     print(v.get())
 Label(glowne_okno,
          text="""Poprawna odpowiedź na to pytanie to... :""",
-         font=("Times New Roman",11,"italic"),
+         bg = 'dark blue',
+         fg = 'white',
+         font=("Arial",11,"italic"),
          padx = 20).pack(side=TOP)
 # wygląd przycisków A B C D i ich umiejscowienie
 for val, language in enumerate(languages):
