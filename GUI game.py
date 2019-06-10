@@ -85,10 +85,10 @@ glowne_okno.geometry("800x900")
 glowne_okno.configure(bg='dark blue') #granatowy kolor tła gry
 
 
-zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sagi Andrzeja Sapkowskiego pochodzi z...','A. Vengerbergu','B. Rivii','C. Oxenfurtu','D. Tretogoru','B'],
-['Jaką cześć liter w wyrazie "bajzel" stanowią samogłoski?','A. jedną trzecią',' B. jedną piątą','C. jedną czwartą','D. jedną drugą','A'],
-['Na akord można:','A. spać','B. śpiewać','C. podróżować','D. pracować','D'],
-['Gromada gadów to inaczej: ', 'A. Arachnida', 'B. Reptilia', 'C. Amphibia', 'D. Insecta', 'B']]
+zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sagi Andrzeja Sapkowskiego pochodzi z...','A. Vengerbergu','B. Rivii','C. Oxenfurtu','D. Tretogoru',1],
+['Jaką cześć liter w wyrazie "bajzel" stanowią samogłoski?','A. jedną trzecią',' B. jedną piątą','C. jedną czwartą','D. jedną drugą',0],
+['Na akord można:','A. spać','B. śpiewać','C. podróżować','D. pracować',3],
+['Gromada gadów to inaczej: ', 'A. Arachnida', 'B. Reptilia', 'C. Amphibia', 'D. Insecta', 1]]
 
 class Pytanie:
     def losuj(self):
@@ -103,6 +103,12 @@ b=wylosowane[2]
 c=wylosowane[3]
 d=wylosowane[4]
 Label(glowne_okno,text=wylosowane[0], bg = 'dark blue', fg = 'white', font=("Arial",16,"italic"), padx = 20).pack(side=TOP) #granatowe tło przycisków lepiej to wygląga jako calość gry
+
+def przyciskWybor():
+    if v.get()== wylosowane[5]:
+        messagebox.showinfo("Poprawna odpowiedz!")
+    else:
+        messagebox.showinfo("Niestety to błędna odpowiedz..")
 
 # to te przyciski odpowiedzi A B C D i ten tekst nad nimi, 
 # ladne kolorki, nie? mogą zostać
@@ -131,10 +137,17 @@ for val, language in enumerate(languages):
                   padx = 20,
                   variable=v,
                   command=ShowChoice,
+                  selectcolor = "orange",
                   font=("Curier",12,"bold"),
                   bg = "light blue",
                   activebackground = "dark red",
                   value=val).pack(anchor=S)
-
+przyciskZatwierdzania=Button(glowne_okno,
+                                text="Zatwierdz odpowiedz",
+                                width=15,
+                                padx=20,
+                                command=przyciskWybor,
+                                font=("Curier",12,"bold"))
+przyciskZatwierdzania.pack()
 
 glowne_okno.mainloop()
