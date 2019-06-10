@@ -6,14 +6,6 @@ import random
 import time
 import tkinter as tk 
 
-# 3 koła ratunkowe w pasku menu, po ich kliknięciu wyświetla się info że one coś tam robią
-def tele():
-    messagebox.showinfo("Dzwonimy do Twojego przyjaciela", "H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź'...\ni jestem tego pewny na... Mogę się jednak mylić...\n")
-def pol_na_pol():
-    messagebox.showinfo("50/50", "Proszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:")
-def publicznosc():
-    messagebox.showinfo("pomoc publicznosci", "Proszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:")
-
 # teraz info co te kola robią bedzie się pojawiało w menu a te przyciski tak jak wcześniej, zostają bez zmian    
 def info_tele():
     messagebox.showinfo("telefon do Twojego przyjaciela", "Wybierając to koło dzwonimy do Twojego przyjaciela, który pomaga Ci poprawnie odpowiedzieć i wygrać milion!!")
@@ -53,16 +45,6 @@ img = img.resize((320,320))
 imgTk = ImageTk.PhotoImage(img)
 plotno.create_image(145,162,image=imgTk)
 
-#przyciski kół
-img50na50 = tk.PhotoImage(file="50-50.jpg")
-przycisk_50na50 = tk.Button(glowne_okno, image=img50na50 ,command=pol_na_pol)
-przycisk_50na50.pack()
-imgPublicznosc = tk.PhotoImage(file="publicznosc.jpg")
-przycisk_publicznosc=Button(glowne_okno, image=imgPublicznosc ,command=publicznosc)
-przycisk_publicznosc.pack()
-imgTelefon = tk.PhotoImage(file="telefon.jpg")
-przycisk_telefon=Button(glowne_okno, image=imgTelefon ,command=tele)
-przycisk_telefon.pack()
 
 pasekMenu = Menu(glowne_okno)
 peirwszeMenu = Menu(pasekMenu, tearoff=0)
@@ -149,5 +131,38 @@ przyciskZatwierdzania=Button(glowne_okno,
                                 command=przyciskWybor,
                                 font=("Curier",12,"bold"))
 przyciskZatwierdzania.pack()
+#przyciski kół
+def brakKola():
+    messagebox.showinfo("Brak koła","Już wykorzystałeś to koło ratunkowe")
+def tele():
+    messagebox.showinfo("Dzwonimy do Twojego przyjaciela", "H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź'...\ni jestem tego pewny na... Mogę się jednak mylić...\n")
+    przycisk_telefon.destroy()
+    przycisk_telefon_Red = Button(glowne_okno, image=imgTelefonRed ,command=brakKola)
+    przycisk_telefon_Red.pack()
+def pol_na_pol():
+    messagebox.showinfo("50/50", "Proszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:")
+    przycisk_50na50.destroy()
+    przycisk_50na50_Red = Button(glowne_okno, image=img50na50Red ,command=brakKola)
+    przycisk_50na50_Red.pack()
+def publicznosc():
+    messagebox.showinfo("pomoc publicznosci", "Proszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:")
+    przycisk_publicznosc.destroy()
+    przycisk_publicznosc_Red = Button(glowne_okno, image=imgPublicznoscRed ,command=brakKola)
+    przycisk_publicznosc_Red.pack()
 
+img50na50 = tk.PhotoImage(file="50-50.jpg")
+img50na50Red = tk.PhotoImage(file="50-50Red.jpg")
+przycisk_50na50 = tk.Button(glowne_okno, image=img50na50 ,command=pol_na_pol)
+przycisk_50na50.pack()
+
+imgTelefon = tk.PhotoImage(file="telefon.jpg")
+imgTelefonRed = tk.PhotoImage(file="telefonRed.jpg")
+przycisk_telefon=Button(glowne_okno, image=imgTelefon ,command=tele)
+przycisk_telefon.pack()
+
+
+imgPublicznosc = tk.PhotoImage(file="publicznosc.jpg")
+imgPublicznoscRed = tk.PhotoImage(file="publicznoscRed.jpg")
+przycisk_publicznosc=Button(glowne_okno, image=imgPublicznosc ,command=publicznosc)
+przycisk_publicznosc.pack()
 glowne_okno.mainloop()
