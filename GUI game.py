@@ -70,7 +70,18 @@ glowne_okno.configure(bg='dark blue') #granatowy kolor tła gry
 zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sagi Andrzeja Sapkowskiego pochodzi z...','A. Vengerbergu','B. Rivii','C. Oxenfurtu','D. Tretogoru',1],
 ['Jaką cześć liter w wyrazie "bajzel" stanowią samogłoski?','A. jedną trzecią',' B. jedną piątą','C. jedną czwartą','D. jedną drugą',0],
 ['Na akord można:','A. spać','B. śpiewać','C. podróżować','D. pracować',3],
-['Gromada gadów to inaczej: ', 'A. Arachnida', 'B. Reptilia', 'C. Amphibia', 'D. Insecta', 1]]
+['Gromada gadów to inaczej: ', 'A. Arachnida', 'B. Reptilia', 'C. Amphibia', 'D. Insecta', 1],
+['W którym z miast znajdują się korty Flushing Meadows?', 'A. w Londynie', 'B. w Paryżu', 'C. w Nowym Jorku', 'D. w Wiedniu', 2],
+['Co jest głównym składnikiem maści ichtiolowej?', 'A. tlenek cynku', 'B. szkielet ryb karpiowatych', 'C. łupki bitumiczne','D. tran', 2],
+['Na strychu suszy się 13 par białych i 9 par czarnych skarpetek. Jest tam tak ciemno, że nie widać ich kolorów. Ile pojedynczych skarpetek powinno się wziąć, by być pewnym, że dwie będą w tym samym kolorze?', 'A.5', 'B.13', 'C.3', 'D.14', 2],
+['Który aktor urodził się w roku opatentowania kinematografu braci Lumière?', 'A. Rudolph Valentino', 'B. Humphrey Bogart', 'C. Charlie Chaplin', 'D. Fred Astaire', 0],
+['Kto był pierwszym królem Zjednoczonych Włoch?', 'A. Fryderyk II', 'B. Karol V', 'C. Mikołaj I', 'D. Wiktor Emanuel II', 3],
+['Magazyn "Time" ogłosił w lipcu 2015 r. ranking 10 najbogatszych osób w historii powszechnej. Kto z nich znalazł się najwyżej?', 'A. cesarz Shenzong (Chiny,XI w.)', 'B. Czyngis-chan (Mongolia,XII w.)', 'C. Bill Gates (USA,XX/XXI w.)', 'D. Oktawian August (Rzym, I w. n.e.)', 3],
+['Yeren to: ', 'A. Bohater jednej z bajek w stylu anime', 'B. Tradycyjna walijska potrawa', 'C. Chiński odpowiednik Wielkiej Stopy', 'D. Imię żony Kim Dzong Una', 3],
+['System kanałów na rzece Huang He zaplanował i zlecił wykonanie:', 'A. Mao Zedong', 'B. Yu', 'C. Vladimir Putin', 'D. Marco Polo', 1],
+['Z którym państwem Wielka Brytania toczyła konflikt zbrony o Falklandy w 1982r.?', 'A. z Chile', 'B. z Kolumbią', 'C. z Argentyną', 'D. z Brazylią', 2],
+['Bouillabaisse to potrawa, z której słynie:', 'A. Bordeaux', 'B. Genua', 'C. Wenecja', 'D. Marsylia', 3]]
+
 
 class Pytanie:
     def losuj(self):
