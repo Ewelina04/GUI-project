@@ -113,7 +113,7 @@ def przyciskWybor():
 # to te przyciski odpowiedzi A B C D i ten tekst nad nimi, 
 # ladne kolorki, nie? mogą zostać
 v = IntVar()
-v.set(0)  # to zazanaczona wartosc początkowa czyli 0 = odpowiedzi A
+v.set(0)  # to zazanaczona wartosc początkowa,domyślna czyli 0 == odp A, ale można to zmienić żeby nie było że hubert sugeruje odpowiedź 
 languages = [
     (a),
     (b),
