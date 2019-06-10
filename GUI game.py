@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 from pygame import mixer
 import random
 import time
-import tkinter as tk
+import tkinter as tk 
 
 # 3 koła ratunkowe w pasku menu, po ich kliknięciu wyświetla się info że one coś tam robią
 def tele():
@@ -74,10 +74,10 @@ peirwszeMenu.add_command(label="publicznosc", command=info_publicznosc)
 
 # dalsze menu po lewej u góry co się wyświetla
 peirwszeMenu.add_command(label="wyjdz", command=glowne_okno.quit)
-pasekMenu.add_cascade(label="koła ratunkowe", menu=peirwszeMenu)
+pasekMenu.add_cascade(label="MENU", menu=peirwszeMenu)
 pomocMenu = Menu(pasekMenu, tearoff=0)
 pomocMenu.add_command(label="info o prowadzącym", command=akcjaAutor)
-pasekMenu.add_cascade(label="Prowadzący", menu=pomocMenu)
+pasekMenu.add_cascade(label="PROWADZĄCY", menu=pomocMenu)
 glowne_okno.config(menu=pasekMenu)
 
 glowne_okno.title("OKNO GRY")
