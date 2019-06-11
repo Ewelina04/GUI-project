@@ -25,7 +25,7 @@ def akcja_przycisk ():
 
 glowne_okno=Tk()
 glowne_okno.state('zoomed') # od razu pojawia się okno gry full screen, wtedy wszystko widać, nic nie jest ucięte (raczej tak jest lepiej)
-
+poprawna=['Dobra odpowiedź! Grasz dalej.','Niestety, jest to...poprawna odpowiedź! Gramy dalej.','Tak, to jest dobra odpowiedź!','Tak, to poprawna odpowiedź!','To jest poprawna odpowiedź!','Świetnie, odpowiedziałeś/aś poprawnie!']
 # dźwięk
 file = 'milionmusic.mp3'
 mixer.init()
@@ -96,9 +96,9 @@ Label(glowne_okno,text=wylosowane[0], bg = 'dark blue', fg = 'white', font=("Ari
 
 def przyciskWybor():
     if v.get()== wylosowane[5]:
-        messagebox.showinfo("Poprawna odpowiedz!")
+        messagebox.showinfo("Poprawna odpowiedz!",random.choice(poprawna))
     else:
-        messagebox.showinfo("Niestety to błędna odpowiedz..")
+        messagebox.showinfo("Blędna odpowiedź","Niestety, odpowiedź którą udzieliłeś była niewłaściwa.")
 
 # to te przyciski odpowiedzi A B C D i ten tekst nad nimi, 
 # ladne kolorki, nie? mogą zostać
