@@ -17,7 +17,7 @@ def info_publicznosc():
     
 # prowadzący po kliknięciu wyżwietla info o hubercie, takie jego cv i autopromocja ;-)
 def akcjaAutor():
-    messagebox.showinfo("Hubert", "jestem hubert urbański i prowadzę grę milionerzy w tvn\nod pon. do pt. o 20.55\nZapraszam!")
+    messagebox.showinfo("Hubert", "jestem hubert urbański i prowadzę grę milionerzy w tvn\nod pon. do pt. o 20.55\nZapraszam do oglądania!")
 
 def akcja_przycisk ():
     print ("Czesc")
@@ -51,8 +51,8 @@ peirwszeMenu = Menu(pasekMenu, tearoff=0)
 
 # nazwy okienek u góry(tytuły) po wcisnieciu poszczególnych kół z menu
 peirwszeMenu.add_command(label="Telefon do przyjaciela", command=info_tele)
-peirwszeMenu.add_command(label="pół na pół", command=info_pol_na_pol)
-peirwszeMenu.add_command(label="publicznosc", command=info_publicznosc)
+peirwszeMenu.add_command(label="Pół a Pół", command=info_pol_na_pol)
+peirwszeMenu.add_command(label="Publicznosc", command=info_publicznosc)
 
 # dalsze menu po lewej u góry co się wyświetla
 peirwszeMenu.add_command(label="wyjdz", command=glowne_okno.quit)
@@ -146,17 +146,17 @@ przyciskZatwierdzania.pack()
 def brakKola():
     messagebox.showinfo("Brak koła","Już wykorzystałeś to koło ratunkowe")
 def tele():
-    messagebox.showinfo("Dzwonimy do Twojego przyjaciela", "H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź'...\ni jestem tego pewny na... Mogę się jednak mylić...\n")
+    messagebox.showinfo("Dzwonimy do Twojego przyjaciela", "H: Witaj! Z tej strony Hubert Urbański z Milionerów.\nTwój przyjaciel gra właśnie o milion i potrzebuje Twojej pomocy przy pytaniu.\nMasz do dyspozycji 4 odpowiedzi.\nP: Myślę, że poprawna jest odpowiedź'... B i jestem tego pewny na 78%\nMogę się jednak mylić...\n")
     przycisk_telefon.destroy()
     przycisk_telefon_Red = Button(glowne_okno, image=imgTelefonRed ,command=brakKola)
     przycisk_telefon_Red.pack()
 def pol_na_pol():
-    messagebox.showinfo("50/50", "Proszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:")
+    messagebox.showinfo("50/50", "Proszę o odrzucenie 2 błędnych odpowiedzi.\nDo wyboru pozostały:\nA. i C.")
     przycisk_50na50.destroy()
     przycisk_50na50_Red = Button(glowne_okno, image=img50na50Red ,command=brakKola)
     przycisk_50na50_Red.pack()
 def publicznosc():
-    messagebox.showinfo("pomoc publicznosci", "Proszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:")
+    messagebox.showinfo("pomoc publicznosci", "Proszę publiczność o zagłosowanie na poprawną państwa zdaniem odpowiedź.\nOto wyniki procentowe kolejno dla odp A, B, C i D:\n34%, 12%, 16%, 38% \nCo teraz o tym sądzisz?")
     przycisk_publicznosc.destroy()
     przycisk_publicznosc_Red = Button(glowne_okno, image=imgPublicznoscRed ,command=brakKola)
     przycisk_publicznosc_Red.pack()
