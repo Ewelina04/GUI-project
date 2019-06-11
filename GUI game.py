@@ -82,15 +82,12 @@ zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sag
 ['Z którym państwem Wielka Brytania toczyła konflikt zbrony o Falklandy w 1982r.?', 'A. z Chile', 'B. z Kolumbią', 'C. z Argentyną', 'D. z Brazylią', 2],
 ['Bouillabaisse to potrawa, z której słynie:', 'A. Bordeaux', 'B. Genua', 'C. Wenecja', 'D. Marsylia', 3]]
 
+def losuj(lista):
+    wylosowane_pytanie=random.choice(zestaw_pytan_1)
+    zestaw_pytan_1.remove(wylosowane_pytanie)
+    return wylosowane_pytanie
 
-class Pytanie:
-    def losuj(self):
-        wylosowane_pytanie=random.choice(zestaw_pytan_1)
-        zestaw_pytan_1.remove(wylosowane_pytanie)
-        return wylosowane_pytanie
-
-pytanie=Pytanie()
-wylosowane = pytanie.losuj()
+wylosowane = losuj(zestaw_pytan_1)
 a=wylosowane[1]
 b=wylosowane[2]
 c=wylosowane[3]
