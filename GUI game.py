@@ -14,10 +14,13 @@ def info_pol_na_pol():
 def info_publicznosc():
     messagebox.showinfo("pomoc publicznosci", "Wybierając to koło proszę publiczność o zagłosowanie na poprawną ich zdaniem odpowiedź.\nPrzedstawiane są wyniki procentowe kolejno dla odp:\nA, B, C i D\nPubliczność może pomóc Ci poprawnie odpowiedzieć i wygrać milion!!")
 
-    
-# prowadzący po kliknięciu wyżwietla info o hubercie, takie jego cv i autopromocja ;-)
+# do menu z info o grze    
 def akcjaAutor():
-    messagebox.showinfo("Hubert", "jestem hubert urbański i prowadzę grę milionerzy w tvn\nod pon. do pt. o 20.55\nZapraszam do oglądania!")
+    messagebox.showinfo("Hubert", "Jestem Hubert Urbański i prowadzę grę Milionerzy w TVN\nod pon. do pt. o 20.55\nZapraszam do oglądania!")
+def zasady():
+    messagebox.showinfo("Jak grać?","Witaj w grze Milionerzy!\nPrzedstawię szybko zasady rozgrywki:Aby wygrać milion, należy odpowiedzieć poprawnie na 12 pytań o 3 poziomach trudności. Wszystkie pytania mają 4 możliwe odpowiedzi - A, B, C, D. W razie zwątpienia, do Twojej dyspozycji są 3 koła ratunkowe – telefon do przyjaciela, pytanie do publiczności i pół na pół. W grze istnieją 2 progi kwoty gwarantowanej - 5 000 i 75 000.\nOznacza to tyle, że nawet jeżeli nie dotrzesz do końca rozgrywki, możesz wrócić do domu z pieniędzmi.\nPowodzenia!")
+def autorzy():
+    messagebox.showinfo("Autorki","Milionerzy v 2.0.1\n\nAutorki:\nEwelina Gajewska\nWeronika Rozenfeld\nWeronika Włodarek\n\n2019")
 
 
 
@@ -46,23 +49,27 @@ plotno.create_image(145,162,image=imgTk)
 
 pasekMenu = Menu(glowne_okno)
 peirwszeMenu = Menu(pasekMenu, tearoff=0)
+kolejneMenu =Menu(pasekMenu,tearoff=0)
 
-# nazwy okienek u góry(tytuły) po wcisnieciu poszczególnych kół z menu
+#koła ratunkowe menu
 peirwszeMenu.add_command(label="Telefon do przyjaciela", command=info_tele)
-peirwszeMenu.add_command(label="Pół a Pół", command=info_pol_na_pol)
-peirwszeMenu.add_command(label="Publicznosc", command=info_publicznosc)
-
-# dalsze menu po lewej u góry co się wyświetla
-peirwszeMenu.add_command(label="wyjdz", command=glowne_okno.quit)
+peirwszeMenu.add_command(label="Pół na pół", command=info_pol_na_pol)
+peirwszeMenu.add_command(label="Publiczność", command=info_publicznosc)
+peirwszeMenu.add_command(label="Wyjdź z gry", command=glowne_okno.quit)
 pasekMenu.add_cascade(label="MENU", menu=peirwszeMenu)
-pomocMenu = Menu(pasekMenu, tearoff=0)
-pomocMenu.add_command(label="info o prowadzącym", command=akcjaAutor)
-pasekMenu.add_cascade(label="PROWADZĄCY", menu=pomocMenu)
+
+#menu o grze
+kolejneMenu.add_command(label="O prowadzącym", command=akcjaAutor)
+kolejneMenu.add_command(label="Zasady",command=zasady)
+kolejneMenu.add_command(label="Autorki",command=autorzy)
+pasekMenu.add_cascade(label="O GRZE",menu=kolejneMenu)
+
 glowne_okno.config(menu=pasekMenu)
+
 
 glowne_okno.title("OKNO GRY")
 glowne_okno.geometry("800x900")
-glowne_okno.configure(bg='dark blue') #granatowy kolor tła gry
+glowne_okno.configure(bg='midnight blue') #granatowy kolor tła gry
 
 
 zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sagi Andrzeja Sapkowskiego pochodzi z...','A. Vengerbergu','B. Rivii','C. Oxenfurtu','D. Tretogoru',1],
@@ -74,7 +81,7 @@ zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sag
 ['Na strychu suszy się 13 par białych i 9 par czarnych skarpetek. Jest tam tak ciemno, że nie widać ich kolorów. Ile pojedynczych skarpetek powinno się wziąć, by być pewnym, że dwie będą w tym samym kolorze?', 'A.5', 'B.13', 'C.3', 'D.14', 2],
 ['Który aktor urodził się w roku opatentowania kinematografu braci Lumière?', 'A. Rudolph Valentino', 'B. Humphrey Bogart', 'C. Charlie Chaplin', 'D. Fred Astaire', 0],
 ['Kto był pierwszym królem Zjednoczonych Włoch?', 'A. Fryderyk II', 'B. Karol V', 'C. Mikołaj I', 'D. Wiktor Emanuel II', 3],
-['Magazyn "Time" ogłosił w lipcu 2015 r. ranking 10 najbogatszych osób w historii powszechnej. Kto z nich znalazł się najwyżej?', 'A. cesarz Shenzong(Chiny,XI w.)', 'B. Czyngis-chan(Mongolia,XII w.)', 'C. Bill Gates(USA,XX/XXI w.)', 'D. Oktawian August(Rzym, I w. n.e.)', 3],
+['Magazyn "Time" ogłosił w lipcu 2015 r. ranking 10 najbogatszych osób w historii powszechnej. Kto z nich znalazł się najwyżej?', 'A. Cesarz Shenzong (Chiny,XI w.)', 'B. Czyngis-chan (Mongolia,XII w.)', 'C. Bill Gates (USA,XX/XXI w.)', 'D. Oktawian August (Rzym, I w. n.e.)', 3],
 ['Yeren to: ', 'A. Bohater jednej z bajek w stylu anime', 'B. Tradycyjna walijska potrawa', 'C. Chiński odpowiednik Wielkiej Stopy', 'D. Imię żony Kim Dzong Una', 3],
 ['System kanałów na rzece Huang He zaplanował i zlecił wykonanie:', 'A. Mao Zedong', 'B. Yu', 'C. Vladimir Putin', 'D. Marco Polo', 1],
 ['Z którym państwem Wielka Brytania toczyła konflikt zbrony o Falklandy w 1982r.?', 'A. z Chile', 'B. z Kolumbią', 'C. z Argentyną', 'D. z Brazylią', 2],
@@ -90,7 +97,7 @@ a=wylosowane[1]
 b=wylosowane[2]
 c=wylosowane[3]
 d=wylosowane[4]
-Label(glowne_okno,text=wylosowane[0], bg = 'dark blue', fg = 'white', font=("Arial",16,"italic"), padx = 20).pack(side=TOP) #granatowe tło przycisków lepiej to wygląga jako calość gry
+Label(glowne_okno,text=wylosowane[0], bg = 'midnight blue', fg = 'white', font=("Arial",16,"italic"), padx = 20).pack(side=TOP) #granatowe tło przycisków lepiej to wygląga jako calość gry
 
 def przyciskWybor():
     if v.get()== wylosowane[5]:
@@ -112,7 +119,7 @@ def ShowChoice():
     print(v.get())
 Label(glowne_okno,
          text="""Poprawna odpowiedź na to pytanie to... :""",
-         bg = 'dark blue',
+         bg = 'midnight blue',
          fg = 'white',
          font=("Arial",16,"italic"),
          padx = 20).pack(side=TOP)
