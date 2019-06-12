@@ -19,8 +19,6 @@ def info_publicznosc():
 def akcjaAutor():
     messagebox.showinfo("Hubert", "jestem hubert urbański i prowadzę grę milionerzy w tvn\nod pon. do pt. o 20.55\nZapraszam do oglądania!")
 
-def akcja_przycisk ():
-    print ("Czesc")
 
 
 glowne_okno=Tk()
@@ -76,7 +74,7 @@ zestaw_pytan_1 = [['Przydomek wiedźmina Geralta wskazuje na to, że bohater sag
 ['Na strychu suszy się 13 par białych i 9 par czarnych skarpetek. Jest tam tak ciemno, że nie widać ich kolorów. Ile pojedynczych skarpetek powinno się wziąć, by być pewnym, że dwie będą w tym samym kolorze?', 'A.5', 'B.13', 'C.3', 'D.14', 2],
 ['Który aktor urodził się w roku opatentowania kinematografu braci Lumière?', 'A. Rudolph Valentino', 'B. Humphrey Bogart', 'C. Charlie Chaplin', 'D. Fred Astaire', 0],
 ['Kto był pierwszym królem Zjednoczonych Włoch?', 'A. Fryderyk II', 'B. Karol V', 'C. Mikołaj I', 'D. Wiktor Emanuel II', 3],
-['Magazyn "Time" ogłosił w lipcu 2015 r. ranking 10 najbogatszych osób w historii powszechnej. Kto z nich znalazł się najwyżej?', 'A. cesarz Shenzong (Chiny,XI w.)', 'B. Czyngis-chan (Mongolia,XII w.)', 'C. Bill Gates (USA,XX/XXI w.)', 'D. Oktawian August (Rzym, I w. n.e.)', 3],
+['Magazyn "Time" ogłosił w lipcu 2015 r. ranking 10 najbogatszych osób w historii powszechnej. Kto z nich znalazł się najwyżej?', 'A. cesarz Shenzong(Chiny,XI w.)', 'B. Czyngis-chan(Mongolia,XII w.)', 'C. Bill Gates(USA,XX/XXI w.)', 'D. Oktawian August(Rzym, I w. n.e.)', 3],
 ['Yeren to: ', 'A. Bohater jednej z bajek w stylu anime', 'B. Tradycyjna walijska potrawa', 'C. Chiński odpowiednik Wielkiej Stopy', 'D. Imię żony Kim Dzong Una', 3],
 ['System kanałów na rzece Huang He zaplanował i zlecił wykonanie:', 'A. Mao Zedong', 'B. Yu', 'C. Vladimir Putin', 'D. Marco Polo', 1],
 ['Z którym państwem Wielka Brytania toczyła konflikt zbrony o Falklandy w 1982r.?', 'A. z Chile', 'B. z Kolumbią', 'C. z Argentyną', 'D. z Brazylią', 2],
@@ -123,7 +121,7 @@ for val, language in enumerate(languages):
     Radiobutton(glowne_okno,
                   text=language,
                   indicatoron = 0,
-                  width = 20,
+                  width = 30,
                   padx = 20,
                   variable=v,
                   command=ShowChoice,
@@ -136,6 +134,7 @@ przyciskZatwierdzania=Button(glowne_okno,
                                 text="Zatwierdz odpowiedz",
                                 width=15,
                                 padx=20,
+                                activebackground = "green",
                                 command=przyciskWybor,
                                 font=("Curier",12,"bold"))
 przyciskZatwierdzania.pack()
